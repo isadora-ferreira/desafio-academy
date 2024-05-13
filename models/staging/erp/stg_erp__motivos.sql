@@ -1,9 +1,9 @@
 with
     fonte_motivos as (
         select 
-            cast(SALESREASONID as int) as pk__motivo_de_venda
-            , cast(NAME as string) as nm__motivo_de_venda
-            , cast(REASONTYPE as string) as nm__tipo_de_venda
+            cast(SALESREASONID as int) as pk_motivo_de_venda
+            , cast(NAME as string) as nm_motivo_de_venda
+            , cast(REASONTYPE as string) as nm_tipo_de_venda
         from {{ source('erp', 'SALESREASON') }}
     )
 
