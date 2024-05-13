@@ -5,6 +5,8 @@ sources:
     database: FEA24_4  
     schema: RAW_ADVENTURE_WORKS  
     tables:
+      - name: SALESORDERHEADER
       - name: SALESORDERHEADERSALESREASON
       - name: SALESREASON
+      - name: CREDITCARD
 
