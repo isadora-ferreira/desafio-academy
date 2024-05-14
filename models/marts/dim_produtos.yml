@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    description: >
+      Tabela dimensão dos produtos vendidos pela Adventure Works.
+    columns:
+      - name: PK_ID_PRODUTO
+        description: Chave primária da dimensão de produtos.
+        tests:
+          - not_null
+          
+      - name: FK_DETALHE_PEDIDO
+        description: Coluna com os códigos das chaves dos pedidos.
+      
+      - name: FK_ID_PRODUTO
+        description: Identificação do produto por venda.
+
+      - name: NM_PRODUTO
+        description: Nome do produto por venda.
+
+      - name: NUMERO_PRODUTO
+        description: Número do produto por venda.
+
+      - name: QUANTIDADE
+        description: Quantidade vendida do produto.
+
+      - name: PRECO_UNIDADE
+        description: Preço unitário do produto.
+
+      - name: DESCONTO_UNIDADE
+        description: Desconto de cada unidade vendida.
+

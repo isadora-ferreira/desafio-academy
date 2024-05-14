@@ -9,4 +9,7 @@ sources:
       - name: SALESORDERHEADERSALESREASON
       - name: SALESREASON
       - name: CREDITCARD
+      - name: PRODUCT
+      - name: SALESORDERDETAIL
+      
 
