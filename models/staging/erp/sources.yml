@@ -11,5 +11,12 @@ sources:
       - name: CREDITCARD
       - name: PRODUCT
       - name: SALESORDERDETAIL
+      - name: CUSTOMER
+      - name: PERSON
+      - name: BUSINESSENTITYCONTACT
+      - name: ADDRESS
+      - name: STATEPROVINCE
+      - name: COUNTRYREGION
+
       
 

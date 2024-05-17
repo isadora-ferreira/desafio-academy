@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: >
+      Tabela dimensão dos clientes da empresa Adventure Works.
+    columns:
+      - name: PK_CLIENTE
+        description: Chave primária da dimensão Clientes (CUSTOMERID).
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_PESSOA
+        description: Chave estrangeira da dimensão Clientes (PERSONID).

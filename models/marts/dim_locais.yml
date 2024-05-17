@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_locais
+    description: >
+      Tabela dimensão das cidades, estados e países das vendas da empresa Adventure Works.
+    columns:
+      - name: PK_TERRITORIO
+        description: Chave primária da dimensão Locais (TERRITORYID).
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_ESTADO
+        description: Identificação do estado (STATEPROVINCEID).
+
+      - name: FK_PAIS
+        description: Identificação do país (COUNTRYREGIONCODE).
+
+      - name: NM_CIDADE
+        description: Nome da cidade.
+
+      - name: NM_ESTADO
+        description: Nome do Estado.
+
+      - name: NM_PAIS
+        description: Nome do país.
+
+
