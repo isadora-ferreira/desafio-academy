@@ -10,13 +10,16 @@ with
     )
 
     , joined as (
-        select 
-            cartoes.PK_ID_CARTAO
-            , pedidos.FK_PEDIDO
+        select
+            cartoes.PK_CARTAO
+            , pedidos.PK_PEDIDO as FK_PEDIDO
             , cartoes.TIPO_CARTAO
         from pedidos
-        left join cartoes on pedidos.fk_id_cartao = cartoes.pk_id_cartao
+        left join cartoes on pedidos.fk_cartao = cartoes.pk_cartao
     )
 
 select *
 from joined
+where PK_CARTAO is not null
+
+--PK não está única
