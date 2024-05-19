@@ -20,9 +20,15 @@ with
             , pedidos_detalhes.DESCONTO_UNIDADE
         from produtos
         left join pedidos_detalhes on produtos.pk_produto = pedidos_detalhes.fk_produto
+        where FK_PEDIDO is not null
+    )
+
+    , criada_chave_primaria as (
+        select
+            cast(FK_PEDIDO as varchar) || '/' || cast(PK_PRODUTO as varchar) as SK_PRODUTO
+            , *
+        from joined
     )
 
 select *
-from joined
-
---PK não está única
+from criada_chave_primaria

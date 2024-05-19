@@ -5,11 +5,14 @@ models:
     description: >
       Tabela dimensão dos motivos da venda da empresa Adventure Works.
     columns:
-      - name: PK_PEDIDO
-        description: Chave primária da dimensão Motivos (SALESORDERID).
+      - name: SK_MOTIVO_DE_VENDA
+        description: Surrogate key da dimensão Motivos - concatenação entre PK_PEDIDO e ID_MOTIVO_DE_VENDA.
         tests:
           - unique
           - not_null
+
+      - name: PK_PEDIDO
+        description: Chave primária da dimensão Motivos (SALESORDERID).
           
       - name: ID_MOTIVO_DE_VENDA
         description: Identificação do tipo de venda (SALESREASONID).

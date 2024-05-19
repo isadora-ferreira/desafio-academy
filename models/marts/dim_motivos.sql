@@ -19,7 +19,12 @@ with
         left join motivos on motivos_por_pedido.fk_motivo_de_venda = motivos.pk_motivo_de_venda
     )
 
-select *
-from joined
+    , criada_chave_primaria as (
+        select
+            cast(PK_PEDIDO as varchar) || '/' || cast(ID_MOTIVO_DE_VENDA as varchar) as SK_MOTIVO_DE_VENDA
+            , *
+        from joined
+    )
 
---PK não está única
+select *
+from criada_chave_primaria

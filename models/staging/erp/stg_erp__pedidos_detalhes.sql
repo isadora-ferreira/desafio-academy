@@ -4,8 +4,8 @@ with
             cast(SALESORDERID as int) as fk_pedido 
             , cast(PRODUCTID as int) as fk_produto
             , cast(ORDERQTY as int) as quantidade
-            , cast(UNITPRICE as int) as preco_unidade
-            , cast(UNITPRICEDISCOUNT as int) as desconto_unidade
+            , cast(UNITPRICE as numeric(18,2)) as preco_unidade
+            , cast(UNITPRICEDISCOUNT as numeric(18,2)) as desconto_unidade
         from {{ source('erp', 'SALESORDERDETAIL') }}
     )
 

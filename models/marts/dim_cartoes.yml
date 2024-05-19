@@ -5,11 +5,15 @@ models:
     description: >
       Tabela dimensão dos cartões de crédito usados nas vendas da empresa Adventure Works.
     columns:
-      - name: PK_CARTAO
-        description: Chave primária da dimensão Cartoes (CREDITCARDID).
+      - name: SK_CARTAO
+        description: Surrogate key da dimensão Cartoes - concatenação entre PK_CARTAO e FK_PEDIDO, 
+          caso o pedido não tenha usado cartão, concatena então com a SEM_CARTAO.
         tests:
           - unique
           - not_null
+
+      - name: PK_CARTAO
+        description: Chave primária da dimensão Cartoes (CREDITCARDID).
 
       - name: FK_PEDIDO
         description: Chave estrangeira da dimensão Cartoes (SALESORDERID).

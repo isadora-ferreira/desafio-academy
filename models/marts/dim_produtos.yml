@@ -5,11 +5,14 @@ models:
     description: >
       Tabela dimensão dos produtos vendidos pela Adventure Works.
     columns:
-      - name: PK_PRODUTO
-        description: Chave primária da dimensão produto (PRODUCTID).
+      - name: SK_PRODUTO
+        description: Surrogate key da dimensão Produtos. Concatenação entre PK_PRODUTO e FK_PEDIDO.
         tests:
           - unique
           - not_null
+
+      - name: PK_PRODUTO
+        description: Chave primária da dimensão produto (PRODUCTID).
       
       - name: FK_PEDIDO
         description: Chave estrangeira com o código do pedido (SALESORDERID).
