@@ -25,10 +25,16 @@ with
         from estados
         left join cidades on estados.fk_estado = cidades.pk_estado
         left join pais on estados.fk_pais = pais.pk_pais
+        where NM_CIDADE is not null
+    )
+
+    , criada_chave_primaria as (
+        select
+            cast(PK_TERRITORIO as varchar) || '-' || cast(FK_ESTADO as varchar) || '-' || cast(NM_CIDADE as varchar) as SK_TERRITORIO
+            , *
+        from joined
     )
 
 select 
     distinct *
-from joined
-
---PK não está única
+from criada_chave_primaria

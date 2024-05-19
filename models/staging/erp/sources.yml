@@ -6,17 +6,81 @@ sources:
     schema: RAW_ADVENTURE_WORKS  
     tables:
       - name: SALESORDERHEADER
+        columns:
+            - name: SALESORDERID
+              tests:
+                - unique
+                - not_null
+
       - name: SALESORDERHEADERSALESREASON
+        columns:
+            - name: SALESORDERID
+              tests:
+                - unique
+                - not_null
+
       - name: SALESREASON
+        columns:
+            - name: SALESREASONID
+              tests:
+                - unique
+                - not_null
+
       - name: CREDITCARD
+        columns:
+          - name: CREDITCARDID
+            tests:
+              - unique
+              - not_null
+     
       - name: PRODUCT
+        columns:
+            - name: PRODUCTID
+              tests:
+                - unique
+                - not_null
+
       - name: SALESORDERDETAIL
+        columns:
+            - name: SALESORDERID
+              tests:
+                - unique
+                - not_null
+
       - name: CUSTOMER
+        columns:
+            - name: CUSTOMERID
+              tests:
+                - unique
+                - not_null
+
       - name: PERSON
-      - name: BUSINESSENTITYCONTACT
+        columns:
+            - name: BUSINESSENTITYID
+              tests:
+                - unique
+                - not_null
+
       - name: ADDRESS
+        columns:
+            - name: CITY
+              tests:
+                - unique
+                - not_null
+
       - name: STATEPROVINCE
+        columns:
+            - name: TERRITORYID
+              tests:
+                - unique
+                - not_null
+
       - name: COUNTRYREGION
+        columns:
+            - name: COUNTRYREGIONCODE
+              tests:
+                - unique
+                - not_null
 
       
 
