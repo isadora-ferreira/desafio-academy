@@ -16,7 +16,6 @@ sources:
         columns:
             - name: SALESORDERID
               tests:
-                - unique
                 - not_null
 
       - name: SALESREASON
@@ -44,7 +43,6 @@ sources:
         columns:
             - name: SALESORDERID
               tests:
-                - unique
                 - not_null
 
       - name: CUSTOMER
@@ -63,14 +61,14 @@ sources:
 
       - name: ADDRESS
         columns:
-            - name: CITY
+            - name: ADDRESSID
               tests:
                 - unique
                 - not_null
 
       - name: STATEPROVINCE
         columns:
-            - name: TERRITORYID
+            - name: STATEPROVINCEID
               tests:
                 - unique
                 - not_null
