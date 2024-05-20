@@ -8,3 +8,4 @@ with
 
 select *
 from fonte_pessoas
+where NM_CLIENTE is not null
