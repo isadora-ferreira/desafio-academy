@@ -59,7 +59,32 @@ with
         left join dim_motivos on fatos.fk_motivo_de_venda_rf = dim_motivos.pk_motivo_de_venda
     )
 
-select 
-    distinct*
-from joined
-order by ID_PEDIDO
+    , metricas as (
+        select
+            SK_VENDAS
+            , ID_PEDIDO
+            , ID_PRODUTO
+            , ID_CARTAO
+            , ID_CLIENTE
+            , ID_ENDERECO
+            , ID_MOTIVO_DE_VENDA
+            , DATA_DO_PEDIDO
+            , STATUS_DO_PEDIDO
+            , NM_PRODUTO
+            , QUANTIDADE
+            , PRECO_UNIDADE
+            , DESCONTO_UNIDADE
+            , QUANTIDADE * PRECO_UNIDADE as valor_negociado_bruto
+            , QUANTIDADE * (1 - DESCONTO_UNIDADE) * PRECO_UNIDADE as valor_negociado_liquido
+            , TIPO_CARTAO
+            , NM_CLIENTE
+            , NM_CIDADE
+            , NM_ESTADO
+            , NM_PAIS
+            , NM_MOTIVO_DE_VENDA
+            , NM_TIPO_DE_VENDA
+        from joined
+    )
+
+select *
+from metricas

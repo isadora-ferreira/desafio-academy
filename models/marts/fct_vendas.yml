@@ -10,3 +10,66 @@ models:
         tests:
           - unique
           - not_null
+
+      - name: ID_PEDIDO
+        description: Identificação do pedido - nota fiscal (SALESORDERID).
+
+      - name: ID_PRODUTO
+        description: Identificação do produto (PRODUCTID).
+
+      - name: ID_CARTAO
+        description: Identificação do cartão (CREDITCARDID).
+
+      - name: ID_CLIENTE
+        description: Identificação do cliente (CUSTOMERID).
+
+      - name: ID_ENDERECO
+        description: Identificação do endereço de envio (BILLTOADDRESSID).
+
+      - name: ID_MOTIVO_DE_VENDA
+        description: Identificação do motivo de venda (SALESREASONID).
+
+      - name: DATA_DO_PEDIDO
+        description: Data da venda (ORDERDATE).
+
+      - name: STATUS_DO_PEDIDO
+        description: Status do pedido.
+
+      - name: NM_PRODUTO
+        description: Nome do produto.
+
+      - name: QUANTIDADE
+        description: Quantidade vendida.
+
+      - name: PRECO_UNIDADE
+        description: Preço unitário.
+
+      - name: DESCONTO_UNIDADE
+        description: Desconto unitário.
+
+      - name: VALOR_NEGOCIADO_BRUTO
+        description: Quantidade vendida * Preço unitário.
+
+      - name: VALOR_NEGOCIADO_LIQUIDO
+        description: Preço unitário * Quantidade vendida - (1 - desconto unitário)
+
+      - name: TIPO_CARTAO
+        description: Tipo do cartão usado no pagamento.
+
+      - name: NM_CLIENTE
+        description: Nome do cliente.
+
+      - name: NM_CIDADE
+        description: Nome da cidade do cliente.
+
+      - name: NM_ESTADO
+        description: Nome do Estado do cliente.
+
+      - name: NM_PAIS
+        description: Nome do país do cliente.
+
+      - name: NM_MOTIVO_DE_VENDA
+        description: Motivo da venda.
+
+      - name: NM_TIPO_DE_VENDA
+        description: Tipo do motivo da venda.
